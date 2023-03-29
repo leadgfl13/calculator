@@ -1,0 +1,1 @@
+This is a culminating project for the odin foundations course.  This project will be used to practice my html, css, and javascript skills.  In particular, I am hoping to refine and add to my experience using javascript functions, particularly with arrays and potentially objects.
