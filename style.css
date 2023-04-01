@@ -36,3 +36,13 @@ body{
 #display{
     background-color:white;
 }
+
+#clear{
+    display:flex;
+    flex:3.12
+}
+
+#equals{
+    display:flex;
+    flex:1;
+}
