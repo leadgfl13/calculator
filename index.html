@@ -92,6 +92,14 @@ subtract.addEventListener('click',()=>display.textContent += '-')
 add.addEventListener('click',()=>display.textContent += '+')
 decimal.addEventListener('click',()=>display.textContent += '.')
 clear.addEventListener('click',()=>display.textContent = '')
+equals.addEventListener('click',checkDisplay)
+
+
+function checkDisplay(){
+    const view =document.getElementById('display')
+    const displayValue = view.textContent
+    console.log(displayValue)
+}
 
 
 
