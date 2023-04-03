@@ -94,11 +94,11 @@ decimal.addEventListener('click',()=>display.textContent += '.')
 
 //operators
 
-divide.addEventListener('click',()=>display.textContent += '%')
-multiply.addEventListener('click',()=>display.textContent += '*')
-subtract.addEventListener('click',()=>display.textContent += '-')
+divide.addEventListener('click',storeFirst)
+multiply.addEventListener('click',storeFirst)
+subtract.addEventListener('click',storeFirst)
 add.addEventListener('click',storeFirst)
-add.addEventListener('click',()=>display.textContent = '')
+
 
 
 
@@ -117,6 +117,7 @@ function storeFirst(){
     const view = document.getElementById('display')
     const firstNumber = view.textContent
     console.log(firstNumber)
+    view.textContent = ''
 
     return firstNumber
 
