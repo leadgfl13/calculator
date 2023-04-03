@@ -53,6 +53,10 @@
 </body>
 
 <script>
+
+
+const firstNUmber = ''
+
 const view =document.getElementById('display')
 
 const one = document.getElementById('one')
@@ -86,11 +90,18 @@ seven.addEventListener('click',()=>display.textContent += 7)
 eight.addEventListener('click',()=>display.textContent += 8)
 nine.addEventListener('click',()=>display.textContent += 9)
 zero.addEventListener('click',()=>display.textContent += 0)
+decimal.addEventListener('click',()=>display.textContent += '.')
+
+//operators
+
 divide.addEventListener('click',()=>display.textContent += '%')
 multiply.addEventListener('click',()=>display.textContent += '*')
 subtract.addEventListener('click',()=>display.textContent += '-')
-add.addEventListener('click',()=>display.textContent += '+')
-decimal.addEventListener('click',()=>display.textContent += '.')
+add.addEventListener('click',storeFirst)
+add.addEventListener('click',()=>display.textContent = '')
+
+
+
 clear.addEventListener('click',()=>display.textContent = '')
 equals.addEventListener('click',checkDisplay)
 
@@ -101,6 +112,15 @@ function checkDisplay(){
     console.log(displayValue)
 }
 
+
+function storeFirst(){
+    const view = document.getElementById('display')
+    const firstNumber = view.textContent
+    console.log(firstNumber)
+
+    return firstNumber
+
+}
 
 
 </script>
