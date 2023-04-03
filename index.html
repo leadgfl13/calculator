@@ -94,10 +94,10 @@ decimal.addEventListener('click',()=>display.textContent += '.')
 
 //operators
 
-divide.addEventListener('click',storeFirst)
-multiply.addEventListener('click',storeFirst)
-subtract.addEventListener('click',storeFirst)
-add.addEventListener('click',storeFirst)
+divide.addEventListener('click',storeFirstDivide)
+multiply.addEventListener('click',storeFirstMultiply)
+subtract.addEventListener('click',storeFirstSubtract)
+add.addEventListener('click',storeFirstAdd)
 
 
 
@@ -113,16 +113,41 @@ function checkDisplay(){
 }
 
 
-function storeFirst(){
+function storeFirstAdd(){
     const view = document.getElementById('display')
     const firstNumber = view.textContent
     holderArray.push(+firstNumber)
     view.textContent = ''
-    
     console.log(holderArray)
-    return holderArray
-
 }
+
+function storeFirstSubtract(){
+    const view = document.getElementById('display')
+    const firstNumber = view.textContent
+    holderArray.push(+firstNumber)
+    view.textContent = ''
+    console.log(holderArray)
+}
+
+
+function storeFirstDivide(){
+    const view = document.getElementById('display')
+    const firstNumber = view.textContent
+    holderArray.push(+firstNumber)
+    view.textContent = ''
+    console.log(holderArray)
+}
+
+
+function storeFirstMultiply(){
+    const view = document.getElementById('display')
+    const firstNumber = view.textContent
+    holderArray.push(+firstNumber)
+    view.textContent = ''
+    console.log(holderArray)
+}
+
+
 //need to store numbers in an array
 
 //need function to call when equals is hit.  Used reduce function based on operator that has been given.
@@ -134,7 +159,7 @@ function getSecond(){
 }
 
 function getAnswer(){
-    
+
 }
 
 
