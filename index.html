@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset ="utf-8">
-    <Title>Calculator></Title>
+    <Title>Calculator</Title>
    <link rel = "stylesheet" href =style.css>
 </head>
 <body>
@@ -55,7 +55,7 @@
 <script>
 
 
-const holderArray =[]
+let holderArray =[]
 
 const view =document.getElementById('display')
 
@@ -102,10 +102,18 @@ add.addEventListener('click',storeFirstAdd)
 
 
 
-clear.addEventListener('click',()=>display.textContent = '')
+clear.addEventListener('click',clearAll)
 equals.addEventListener('click',getSecond)
 
 
+
+function clearAll(){
+    const view = document.getElementById('display')
+    display.textContent =''
+    holderArray = []
+    operator = ''
+    
+}
 function checkDisplay(){
     const view =document.getElementById('display')
     const displayValue = view.textContent
@@ -119,6 +127,8 @@ function storeFirstAdd(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
+    let operator ='+'
+    return operator
 }
 
 function storeFirstSubtract(){
@@ -127,6 +137,9 @@ function storeFirstSubtract(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
+    let operator = '-'
+    return operator
+
 }
 
 
@@ -136,6 +149,9 @@ function storeFirstDivide(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
+    let operator ='%'
+    return operator
+
 }
 
 
@@ -145,6 +161,9 @@ function storeFirstMultiply(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
+    let operator ='*'
+    return operator
+
 }
 
 
@@ -155,10 +174,20 @@ function getSecond(){
     const secondNumber = view.textContent
     holderArray.push(+secondNumber)
     console.log(holderArray)
+    getAnswer();
 
 }
 
 function getAnswer(){
+    if(operator ='+'){
+        const sum =holderArray.reduce((first, second)=>first + second);
+        console.log(sum)
+        const view =document.getElementById('display')
+        view.textContent = sum
+    }
+    else{
+        console.log('sorry')
+    }
 
 }
 
