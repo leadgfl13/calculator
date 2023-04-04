@@ -54,9 +54,8 @@
 
 <script>
 
-
+let operator =''
 let holderArray =[]
-
 const view =document.getElementById('display')
 
 const one = document.getElementById('one')
@@ -127,8 +126,8 @@ function storeFirstAdd(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
-    let operator ='+'
-    return operator
+    operator ='+'
+    
 }
 
 function storeFirstSubtract(){
@@ -137,8 +136,8 @@ function storeFirstSubtract(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
-    let operator = '-'
-    return operator
+    operator ='-'
+
 
 }
 
@@ -149,8 +148,8 @@ function storeFirstDivide(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
-    let operator ='%'
-    return operator
+    operator ='%'
+  
 
 }
 
@@ -161,8 +160,8 @@ function storeFirstMultiply(){
     holderArray.push(+firstNumber)
     view.textContent = ''
     console.log(holderArray)
-    let operator ='*'
-    return operator
+    operator ='*'
+    
 
 }
 
@@ -179,16 +178,35 @@ function getSecond(){
 }
 
 function getAnswer(){
-    if(operator ='+'){
+    if(operator =='+'){
         const sum =holderArray.reduce((first, second)=>first + second);
-        console.log(sum)
         const view =document.getElementById('display')
         view.textContent = sum
+        console.log(operator)
+        console.log('sum')
     }
-    else{
-        console.log('sorry')
+      if(operator =='-'){
+        const subs =holderArray.reduce((first, second)=>first - second);
+        const view =document.getElementById('display')
+        view.textContent = subs
+        console.log(operator)
+        console.log('subs')
     }
-
+      if(operator =='%'){
+        const divv = holderArray.reduce((first, second)=>first/second);
+        const view =document.getElementById('display')
+        view.textContent = divv
+        console.log(operator)
+        console.log('divv')
+    }
+      if(operator =='*'){
+        const multy =holderArray.reduce((first, second)=>first * second);
+        const view =document.getElementById('display')
+        view.textContent = multy
+        console.log('multy')
+        console.log(operator)
+    }
+   
 }
 
 
