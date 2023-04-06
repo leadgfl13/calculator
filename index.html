@@ -54,11 +54,7 @@
 
 <script>
 
-let operatorOne =''
-operatorTwo = ''
-let holderArray =[]
 const view =document.getElementById('display')
-
 const one = document.getElementById('one')
 const two = document.getElementById('two')
 const three = document.getElementById('three')
@@ -78,67 +74,78 @@ const equals = document.getElementById('equals')
 const sign = document.getElementById('sign')
 const clear = document.getElementById('clear')
 
-
-
-one.addEventListener('click',()=>display.textContent+=1)
-two.addEventListener('click',()=>display.textContent +=2)
+zero.addEventListener('click',()=>display.textContent+=0)
+one.addEventListener('click',displayOne)
+two.addEventListener('click',displayTwo)
 three.addEventListener('click',()=>display.textContent +=3)
-four.addEventListener('click',()=>display.textContent +=4)
+four.addEventListener('click',()=>display.textContent+=4)
 five.addEventListener('click',()=>display.textContent +=5)
-six.addEventListener('click',()=>display.textContent +=6)
+six.addEventListener('click',()=>display.textContent+=6)
 seven.addEventListener('click',()=>display.textContent +=7)
-eight.addEventListener('click',()=>display.textContent +=8)
+eight.addEventListener('click',()=>display.textContent+=8)
 nine.addEventListener('click',()=>display.textContent +=9)
-zero.addEventListener('click',()=>display.textContent +=0)
-decimal.addEventListener('click',()=>display.textContent += '.')
+clear.addEventListener('click',()=>display.textContent ='')
 
-//operators
-
-divide.addEventListener('click',storeNumAdd)
-multiply.addEventListener('click',storeNumAdd)
-subtract.addEventListener('click',storeNumAdd)
-add.addEventListener('click',storeNumAdd)
-
-//function for operators** Check to see if operator exists, if it does, set new operator to second operator.  Run the reduce function using first operator.
-// THEN set new operator equal to second operator
+displayValue =view.textContent
+console.log(displayValue)
 
 
-clear.addEventListener('click',clearAll)
-//equals.addEventListener('click')
 
-
-function clearAll(){
-    const view = document.getElementById('display')
-    display.textContent =''
-    holderArray = []
-    operator = ''
-    
+function displayOne(){
+    display.textContent +=1
+    displayValue =view.textContent
+    console.log(displayValue)
 }
 
-function storeNumAdd(){
-    let view = document.getElementById('display')
-    num = view.textContent
-    holderArray.push(+num)
-    console.log(holderArray)
-    operatorOne ='+'
-    view.textContent = ''
-    if(holderArray.length>=2 && operatorOne == '+'){
-        sum = holderArray.reduce((first, second)=> first + second);
-        let view = document.getElementById('display')
-        view.textContent = sum
-        operatorOne = operatorTwo
-}}
+function displayTwo(){
+    display.textContent +=2
+    displayValue =view.textContent
+    console.log(displayValue)
+}
+//FUNCTIONS
+let first = 1
 
-function miniOperate(){
-    if(holderArray.length>=2 && operatorOne == '+'){
-        sum = holderArray.reduce((first, second)=> first + second);
-        let view = document.getElementById('display')
-        view.textContent = sum
-        operatorOne = operatorTwo
+let second= 2
+
+let symbol = ''
+
+function Add(a,b){
+c = a + b
+return c
+}
+
+
+function Subtract(a,b){
+c = a - b
+return c
+}
+
+
+function Divide(a,b){
+c = a / b
+return c
+}
+
+
+function Multiply(a,b){
+c = a * b
+return c
+}
+
+
+function operate(first, symbol, second){
+    if(symbol = '+'){
+        Add(first, second)
     }
-}
-function operate(){
-
+    if(symbol = '-'){
+        Subtract(first, second)
+    }
+    if(symbol = '*'){
+        Multiply(first, second)
+    }
+    if(symbol = '/'){
+        Divide(first, second)
+    }
 }
 
 

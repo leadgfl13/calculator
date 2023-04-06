@@ -17,7 +17,7 @@ body{
     display:flex;
     flex:1;
 
-    background-color:gray;
+    background-color:rgb(226, 191, 219);
 }
 
 .button{
@@ -40,10 +40,12 @@ body{
 
 #clear{
     display:flex;
-    flex:3.12
+    flex:3.12;
+    background-color:rgb(166, 221, 152);
 }
 
 #equals{
     display:flex;
     flex:1;
+    background-color:rgb(210, 225, 231);
 }
