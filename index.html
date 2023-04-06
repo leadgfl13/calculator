@@ -63,6 +63,10 @@ const equals = document.getElementById('equals')
 const sign = document.getElementById('sign')
 const clear = document.getElementById('clear')
 //store number functions
+sign.addEventListener('mousedown',displaySign)
+sign.addEventListener('mouseup',()=>document.getElementById('sign').style.backgroundColor ='rgb(226, 191, 219)')
+
+
 decimal.addEventListener('mousedown',displayDecimal)
 decimal.addEventListener('mouseup',()=>document.getElementById('decimal').style.backgroundColor ='rgb(226, 191, 219)')
 
@@ -110,6 +114,19 @@ function clears(){
     flip = 0
 }
 
+
+function displaySign(){
+    dumb = +display.textContent
+    check = Math.sign(dumb)
+    console.log(check)
+    if(check = (1) ){
+    dumber =(dumb * -1)
+    display.textContent = dumber}
+    if(check = -1){
+        dumber =(dumb * -1)
+    display.textContent = dumber}
+    
+    blue = document.getElementById('sign').style.backgroundColor='rgb(300,191,219)'}
 
 function displayDecimal(){
     display.textContent +='.'
