@@ -36,19 +36,8 @@
         <div class = row id = row5>
             <div class = button id = "clear"> C </div>
             <div class = button id = "equals"> = </div>
-
-
-           
         </div>
-
-
-
-
-
     </div>
-
-
-
 
 </body>
 
@@ -74,70 +63,110 @@ const equals = document.getElementById('equals')
 const sign = document.getElementById('sign')
 const clear = document.getElementById('clear')
 //store number functions
-zero.addEventListener('click',displayZero)
-one.addEventListener('click',displayOne)
-two.addEventListener('click',displayTwo)
-three.addEventListener('click',displayThree)
-four.addEventListener('click',displayFour)
-five.addEventListener('click',displayFive)
-six.addEventListener('click',displaySix)
-seven.addEventListener('click',displaySeven)
-eight.addEventListener('click',displayEight)
-nine.addEventListener('click',displayNine)
-clear.addEventListener('click',clears)
-equals.addEventListener('click',Equals)
-add.addEventListener('click',sum)
-subtract.addEventListener('click',subtraction)
-multiply.addEventListener('click',multiplication)
-divide.addEventListener('click',division)
+decimal.addEventListener('mousedown',displayDecimal)
+decimal.addEventListener('mouseup',()=>document.getElementById('decimal').style.backgroundColor ='rgb(226, 191, 219)')
+
+zero.addEventListener('mousedown',displayZero)
+zero.addEventListener('mouseup',()=>document.getElementById('zero').style.backgroundColor ='rgb(226, 191, 219)')
+
+one.addEventListener('mousedown',displayOne)
+one.addEventListener('mouseup',()=>document.getElementById('one').style.backgroundColor ='rgb(226, 191, 219)')
+
+two.addEventListener('mousedown',displayTwo)
+two.addEventListener('mouseup',()=>document.getElementById('two').style.backgroundColor ='rgb(226, 191, 219)')
+three.addEventListener('mousedown',displayThree)
+three.addEventListener('mouseup',()=>document.getElementById('three').style.backgroundColor ='rgb(226, 191, 219)')
+four.addEventListener('mousedown',displayFour)
+four.addEventListener('mouseup',()=>document.getElementById('four').style.backgroundColor ='rgb(226, 191, 219)')
+five.addEventListener('mousedown',displayFive)
+five.addEventListener('mouseup',()=>document.getElementById('five').style.backgroundColor ='rgb(226, 191, 219)')
+six.addEventListener('mousedown',displaySix)
+six.addEventListener('mouseup',()=>document.getElementById('six').style.backgroundColor ='rgb(226, 191, 219)')
+seven.addEventListener('mousedown',displaySeven)
+seven.addEventListener('mouseup',()=>document.getElementById('seven').style.backgroundColor ='rgb(226, 191, 219)')
+eight.addEventListener('mousedown',displayEight)
+eight.addEventListener('mouseup',()=>document.getElementById('eight').style.backgroundColor ='rgb(226, 191, 219)')
+nine.addEventListener('mousedown',displayNine)
+nine.addEventListener('mouseup',()=>document.getElementById('nine').style.backgroundColor ='rgb(226, 191, 219)')
+clear.addEventListener('mousedown',clears)
+clear.addEventListener('mouseup',()=>document.getElementById('clear').style.backgroundColor ='rgb(166, 221, 152')
+equals.addEventListener('mousedown',Equals)
+equals.addEventListener('mouseup',()=>document.getElementById('equals').style.backgroundColor ='rgb(210, 225, 231)')
+add.addEventListener('mousedown',sum)
+add.addEventListener('mouseup',()=>document.getElementById('add').style.backgroundColor ='rgb(226, 191, 219)')
+subtract.addEventListener('mousedown',subtraction)
+subtract.addEventListener('mouseup',()=>document.getElementById('subtract').style.backgroundColor ='rgb(226, 191, 219)')
+multiply.addEventListener('mousedown',multiplication)
+multiply.addEventListener('mouseup',()=>document.getElementById('multiply').style.backgroundColor ='rgb(226, 191, 219)')
+divide.addEventListener('mousedown',division)
+divide.addEventListener('mouseup',()=>document.getElementById('divide').style.backgroundColor ='rgb(226, 191, 219)')
 
 function clears(){
+    blue = document.getElementById('clear').style.backgroundColor='rgb(200,300,152)'
+
     display.textContent = ''
     operators =[]
     holder =[]
     flip = 0
 }
 
+
+function displayDecimal(){
+    display.textContent +='.'
+    displayValue =view.textContent
+    blue = document.getElementById('decimal').style.backgroundColor='rgb(300,191,219)'}
+
 function displayOne(){
     display.textContent +=1
     displayValue =view.textContent
-}
+    blue = document.getElementById('one').style.backgroundColor='rgb(300,191,219)'}
 
+    
 function displayTwo(){
     display.textContent +=2
     displayValue =view.textContent
+    blue = document.getElementById('two').style.backgroundColor='rgb(300,191,219)'
+
 }
 function displayThree(){
     display.textContent +=3
     displayValue =view.textContent
+    blue = document.getElementById('three').style.backgroundColor='rgb(300,191,219)'
 }
 function displayFour(){
     display.textContent +=4
     displayValue =view.textContent
+    blue = document.getElementById('four').style.backgroundColor='rgb(300,191,219)'
 }
 function displayFive(){
     display.textContent +=5
     displayValue =view.textContent
+    blue = document.getElementById('five').style.backgroundColor='rgb(300,191,219)'
 }
 function displaySix(){
     display.textContent +=6
     displayValue =view.textContent
+    blue = document.getElementById('six').style.backgroundColor='rgb(300,191,219)'
 }
 function displaySeven(){
     display.textContent +=7
     displayValue =view.textContent
+    blue = document.getElementById('seven').style.backgroundColor='rgb(300,191,219)'
 }
 function displayEight(){
     display.textContent +=8
     displayValue =view.textContent
+    blue = document.getElementById('eight').style.backgroundColor='rgb(300,191,219)'
 }
 function displayNine(){
     display.textContent +=9
     displayValue =view.textContent
+    blue = document.getElementById('nine').style.backgroundColor='rgb(300,191,219)'
 }
 function displayZero(){
     display.textContent +=0
     displayValue =view.textContent
+    blue = document.getElementById('zero').style.backgroundColor='rgb(300,191,219)'
 }
 //FUNCTIONS
 
@@ -156,6 +185,8 @@ holder = []
 operators = []
 //OPERATOR FUNCTIONS
 function sum(){
+    blue = document.getElementById('add').style.backgroundColor='rgb(300,191,219)'
+
     if(flip ===0){
     value1=display.textContent
     holder.push(+value1)
@@ -174,6 +205,8 @@ function sum(){
 
 }
 function subtraction(){
+    blue = document.getElementById('subtract').style.backgroundColor='rgb(300,191,219)'
+
     if(flip ===0){
     value1=display.textContent
     holder.push(+value1)
@@ -192,6 +225,8 @@ function subtraction(){
 
 }
 function division(){
+    blue = document.getElementById('divide').style.backgroundColor='rgb(300,191,219)'
+
     if(flip ===0){
     value1=display.textContent
     holder.push(+value1)
@@ -211,6 +246,8 @@ function division(){
 }
 
 function multiplication(){
+    blue = document.getElementById('multiply').style.backgroundColor='rgb(300,191,219)'
+
     if(flip ===0){
     value1=display.textContent
     holder.push(+value1)
@@ -226,11 +263,10 @@ function multiplication(){
     }
     flip === 0
     return flip
-
 }
 
-
 function Equals(){
+    rblue = document.getElementById('equals').style.backgroundColor = 'rgb(210, 225, 931)'
     flip = 1
     second = display.textContent
     holder.push(+second)
@@ -279,9 +315,7 @@ function Equals(){
         holder.unshift(total)
         first=holder[0]
         display.textContent = total
-    }
-    
-    
+    } 
 }
 }
 </script>

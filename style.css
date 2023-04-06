@@ -6,6 +6,11 @@ body{
 }
 
 .main{
+    margin-top:150px;
+    border-style:solid;
+    border-width:10px;
+    border-radius:20px;
+    border-color:gray;
     display:flex;
     
     flex-direction:column;
@@ -48,4 +53,10 @@ body{
     display:flex;
     flex:1;
     background-color:rgb(210, 225, 231);
+}
+#pressed{
+    display:flex;
+    flex:1;
+
+    background-color:rgb(190, 125, 177);
 }
