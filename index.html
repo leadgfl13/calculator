@@ -136,9 +136,8 @@ function displayDecimal(){
 function displayOne(){
     display.textContent +=1
     displayValue =view.textContent
-    blue = document.getElementById('one').style.backgroundColor='rgb(300,191,219)'}
-
-    
+    blue = document.getElementById('one').style.backgroundColor='rgb(300,191,219)'
+}
 function displayTwo(){
     display.textContent +=2
     displayValue =view.textContent
@@ -196,14 +195,13 @@ view.textContent = total
 value1 = total 
 number2= ''
 }
-flip = 0
 
 holder = []
 operators = []
+flip = 0
 //OPERATOR FUNCTIONS
 function sum(){
     blue = document.getElementById('add').style.backgroundColor='rgb(300,191,219)'
-
     if(flip ===0){
     value1=display.textContent
     holder.push(+value1)
@@ -283,8 +281,7 @@ function multiplication(){
 }
 
 function Equals(){
-    rblue = document.getElementById('equals').style.backgroundColor = 'rgb(210, 225, 931)'
-    flip = 1
+    blue = document.getElementById('equals').style.backgroundColor = 'rgb(210, 225, 931)'
     second = display.textContent
     holder.push(+second)
     while(operators.length){
@@ -296,8 +293,6 @@ function Equals(){
         holder.shift()
         operators.shift()
         holder.unshift(total)
-        first =holder[0]
-      
         display.textContent = total
         }
         if(operators[0] === '-'){
@@ -308,7 +303,6 @@ function Equals(){
         holder.shift()
         operators.shift()
         holder.unshift(total)
-        first=holder[0]
         display.textContent = total
     }
     if(operators[0] === '/'){
@@ -334,5 +328,6 @@ function Equals(){
         display.textContent = total
     } 
 }
+flip =1
 }
 </script>
