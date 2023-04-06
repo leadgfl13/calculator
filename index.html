@@ -73,81 +73,215 @@ const decimal = document.getElementById('decimal')
 const equals = document.getElementById('equals')
 const sign = document.getElementById('sign')
 const clear = document.getElementById('clear')
-
-zero.addEventListener('click',()=>display.textContent+=0)
+//store number functions
+zero.addEventListener('click',displayZero)
 one.addEventListener('click',displayOne)
 two.addEventListener('click',displayTwo)
-three.addEventListener('click',()=>display.textContent +=3)
-four.addEventListener('click',()=>display.textContent+=4)
-five.addEventListener('click',()=>display.textContent +=5)
-six.addEventListener('click',()=>display.textContent+=6)
-seven.addEventListener('click',()=>display.textContent +=7)
-eight.addEventListener('click',()=>display.textContent+=8)
-nine.addEventListener('click',()=>display.textContent +=9)
-clear.addEventListener('click',()=>display.textContent ='')
+three.addEventListener('click',displayThree)
+four.addEventListener('click',displayFour)
+five.addEventListener('click',displayFive)
+six.addEventListener('click',displaySix)
+seven.addEventListener('click',displaySeven)
+eight.addEventListener('click',displayEight)
+nine.addEventListener('click',displayNine)
+clear.addEventListener('click',clears)
+equals.addEventListener('click',Equals)
+add.addEventListener('click',sum)
+subtract.addEventListener('click',subtraction)
+multiply.addEventListener('click',multiplication)
+divide.addEventListener('click',division)
 
-displayValue =view.textContent
-console.log(displayValue)
-
-
+function clears(){
+    display.textContent = ''
+    operators =[]
+    holder =[]
+    flip = 0
+}
 
 function displayOne(){
     display.textContent +=1
     displayValue =view.textContent
-    console.log(displayValue)
 }
 
 function displayTwo(){
     display.textContent +=2
     displayValue =view.textContent
-    console.log(displayValue)
+}
+function displayThree(){
+    display.textContent +=3
+    displayValue =view.textContent
+}
+function displayFour(){
+    display.textContent +=4
+    displayValue =view.textContent
+}
+function displayFive(){
+    display.textContent +=5
+    displayValue =view.textContent
+}
+function displaySix(){
+    display.textContent +=6
+    displayValue =view.textContent
+}
+function displaySeven(){
+    display.textContent +=7
+    displayValue =view.textContent
+}
+function displayEight(){
+    display.textContent +=8
+    displayValue =view.textContent
+}
+function displayNine(){
+    display.textContent +=9
+    displayValue =view.textContent
+}
+function displayZero(){
+    display.textContent +=0
+    displayValue =view.textContent
 }
 //FUNCTIONS
-let first = 1
 
-let second= 2
-
-let symbol = ''
-
-function Add(a,b){
-c = a + b
-return c
+function operate(){
+let number2 =view.textContent
+console.log(number2)
+if(operator = '+')
+total = +value1 + (+number2)
+view.textContent = total   
+value1 = total 
+number2= ''
 }
+flip = 0
 
-
-function Subtract(a,b){
-c = a - b
-return c
-}
-
-
-function Divide(a,b){
-c = a / b
-return c
-}
-
-
-function Multiply(a,b){
-c = a * b
-return c
-}
-
-
-function operate(first, symbol, second){
-    if(symbol = '+'){
-        Add(first, second)
+holder = []
+operators = []
+//OPERATOR FUNCTIONS
+function sum(){
+    if(flip ===0){
+    value1=display.textContent
+    holder.push(+value1)
+    view.textContent = ''
+    symbol = '+'
+    operators.push(symbol)
+    console.log(holder)
     }
-    if(symbol = '-'){
-        Subtract(first, second)
+    if(flip===1){
+    view.textContent = ''
+    symbol = '+'
+    operators.push(symbol)
     }
-    if(symbol = '*'){
-        Multiply(first, second)
+    flip === 0
+    return flip
+
+}
+function subtraction(){
+    if(flip ===0){
+    value1=display.textContent
+    holder.push(+value1)
+    view.textContent = ''
+    symbol = '-'
+    operators.push(symbol)
+    console.log(holder)
     }
-    if(symbol = '/'){
-        Divide(first, second)
+    if(flip===1){
+    view.textContent = ''
+    symbol = '-'
+    operators.push(symbol)
     }
+    flip === 0
+    return flip
+
+}
+function division(){
+    if(flip ===0){
+    value1=display.textContent
+    holder.push(+value1)
+    view.textContent = ''
+    symbol = '/'
+    operators.push(symbol)
+    console.log(holder)
+    }
+    if(flip===1){
+    view.textContent = ''
+    symbol = '/'
+    operators.push(symbol)
+    }
+    flip === 0
+    return flip
+
+}
+
+function multiplication(){
+    if(flip ===0){
+    value1=display.textContent
+    holder.push(+value1)
+    view.textContent = ''
+    symbol = '*'
+    operators.push(symbol)
+    console.log(holder)
+    }
+    if(flip===1){
+    view.textContent = ''
+    symbol = '*'
+    operators.push(symbol)
+    }
+    flip === 0
+    return flip
+
 }
 
 
-
+function Equals(){
+    flip = 1
+    second = display.textContent
+    holder.push(+second)
+    while(operators.length){
+        if(operators[0] === '+'){
+        first = holder[0]
+        second =holder[1]
+        total = first + second
+        holder.shift()
+        holder.shift()
+        operators.shift()
+        holder.unshift(total)
+        first =holder[0]
+      
+        display.textContent = total
+        }
+        if(operators[0] === '-'){
+        first = holder[0]
+        second =holder[1]
+        total = first - second
+        holder.shift()
+        holder.shift()
+        operators.shift()
+        holder.unshift(total)
+        first=holder[0]
+        display.textContent = total
+    }
+    if(operators[0] === '/'){
+        first = holder[0]
+        second =holder[1]
+        total = first / second
+        holder.shift()
+        holder.shift()
+        operators.shift()
+        holder.unshift(total)
+        first=holder[0]
+        display.textContent = total
+    }
+    if(operators[0] === '*'){
+        first = holder[0]
+        second =holder[1]
+        total = first * second
+        holder.shift()
+        holder.shift()
+        operators.shift()
+        holder.unshift(total)
+        first=holder[0]
+        display.textContent = total
+    }
+    
+    
+}
+}
 </script>
