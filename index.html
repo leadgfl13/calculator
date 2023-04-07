@@ -124,9 +124,17 @@ function displaySign(){
     blue = document.getElementById('sign').style.backgroundColor='rgb(300,191,219)'}
 
 function displayDecimal(){
+    displayValue =view.textContent
+    console.log(displayValue.indexOf('.'))
+    check = displayValue.indexOf('.')
+    if(check === -1){
     display.textContent +='.'
     displayValue =view.textContent
     blue = document.getElementById('decimal').style.backgroundColor='rgb(300,191,219)'}
+    else{
+        display.textContent=display.textContent
+    }
+}
 
 function displayOne(){
     console.log(holder)
